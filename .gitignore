@@ -1,4 +1,29 @@
-tests/
+# Python
 __pycache__/
-deepseek.ipynb
+*.pyc
+*.pyo
+*.pyd
 .env
+.env.*
+*.env
+*.sqlite3
+*.db
+*.log
+*.egg-info/
+dist/
+build/
+scripts/
+tests/
+# VSCode
+.vscode/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+# Frontend build
+frontend/dist/
+# OS
+.DS_Store
+Thumbs.db
