@@ -1,0 +1,7 @@
+User should be able to register an account using email and password.
+User should be able to log in and log out securely.
+User can reset their password via email if forgotten.
+User can update their profile information and upload a profile picture.
+User can create, view, edit, and delete items in their personal dashboard.
+User can search and filter items by date and category.
+User receives in-app notifications for important actions (e.g., item updated, password changed). 

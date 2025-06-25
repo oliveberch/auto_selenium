@@ -2,104 +2,26 @@
   "backlog": [
     {
       "epic": "User Authentication",
+      "description": "",
       "stories": [
         {
-          "title": "User Registration",
-          "description": "As a new user, I want to register with my email and password so that I can access the application securely.",
+          "title": "Register New User Account",
+          "description": "As a user, I want to register an account using email and password so that I can access the application.",
           "acceptance_criteria": [
-            "Email validation prevents invalid formats",
-            "Password complexity enforced (min 8 chars, special characters)",
-            "Duplicate emails are rejected"
+            "The system allows users to enter valid email addresses."
           ],
-          "priority": "high"
-        },
-        {
-          "title": "User Login/Logout",
-          "description": "As a registered user, I want to log in/log out to securely access or terminate my session.",
-          "acceptance_criteria": [
-            "Session expires on logout",
-            "Invalid credentials show error messages"
-          ],
-          "priority": "high"
-        },
-        {
-          "title": "Password Reset",
-          "description": "As a user, I want to reset my password via email to regain account access.",
-          "acceptance_criteria": [
-            "Reset link expires after 1 hour",
-            "New password meets complexity rules"
-          ],
-          "priority": "medium"
-        }
-      ]
-    },
-    {
-      "epic": "User Profile Management",
-      "stories": [
-        {
-          "title": "View/Update Profile",
-          "description": "As a user, I want to view and edit my profile details to keep information current.",
-          "acceptance_criteria": [
-            "Changes saved instantly",
-            "Empty fields are prevented"
-          ],
-          "priority": "medium"
-        },
-        {
-          "title": "Upload Profile Picture",
-          "description": "As a user, I want to upload a profile photo for identification.",
-          "acceptance_criteria": [
-            "Supports JPG/PNG (max 2MB)",
-            "Auto-crops to square ratio"
-          ],
-          "priority": "low"
-        }
-      ]
-    },
-    {
-      "epic": "Data Management",
-      "stories": [
-        {
-          "title": "CRUD Items",
-          "description": "As a user, I want to create, read, update, and delete items to manage my data.",
-          "acceptance_criteria": [
-            "Changes persist after refresh",
-            "Deletion requires confirmation"
-          ],
-          "priority": "high"
-        },
-        {
-          "title": "Search & Filter",
-          "description": "As a user, I want to search/filter items to find specific entries quickly.",
-          "acceptance_criteria": [
-            "Real-time results update",
-            "Filters are combinable (e.g., date + category)"
-          ],
-          "priority": "medium"
-        }
-      ]
-    },
-    {
-      "epic": "Notifications",
-      "stories": [
-        {
-          "title": "In-App Notifications",
-          "description": "As a user, I want notifications for actions (e.g., 'Item updated').",
-          "acceptance_criteria": [
-            "Notifications appear within 5 seconds",
-            "Includes timestamp and action type"
-          ],
-          "priority": "low"
+          "priority": "high",
+          "status": "",
+          "story_points": 5,
+          "dependencies": []
         }
       ]
     }
   ],
-  
-  "metadata": 
-  {
+  "metadata": {
     "version": "1.0",
-    "created_at": "2025-06-24",
-    "total_epics": 4,
-    "total_stories": 8
+    "last_updated": "2025-06-25",
+    "total_epics": 1,
+    "total_stories": 1
   }
 }

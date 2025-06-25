@@ -1,5 +1,7 @@
 langchain
 langchain-ollama
+langchain-anthropic
 ollama
 selenium
-pytest 
+pytest
+python-dotenv 
