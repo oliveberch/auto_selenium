@@ -26,7 +26,7 @@ function App() {
   return (
     <Container maxWidth="md" sx={{ py: 4 }}>
       <Typography variant="h4" align="center" gutterBottom>
-        AI-Powered Selenium Test Generator
+        Selenium Test Generator
       </Typography>
       <Stepper activeStep={activeStep} sx={{ mb: 4 }}>
         {steps.map((label) => (
