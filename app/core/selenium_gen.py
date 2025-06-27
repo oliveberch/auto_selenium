@@ -1,11 +1,16 @@
 import json
 from app.core.llm_utils import get_llm, PromptTemplate, StrOutputParser
 
+# DEBUG: Add logging
+print("[DEBUG] selenium_gen.py loaded")
+
 def generate_selenium_scripts(user_stories, model_id):
     """
     For each user story, generate test steps and then Selenium code using the LLM.
     Returns a list of dicts with 'title' and 'script'.
     """
+    # DEBUG: Log received user stories
+    print(f"[DEBUG] Received user stories: {json.dumps(user_stories, indent=2)}")
     if isinstance(user_stories, str):
         user_stories = json.loads(user_stories)
     scripts = []
@@ -59,8 +64,10 @@ def generate_selenium_scripts(user_stories, model_id):
                 cleaned_steps = cleaned_steps[:-3]
             cleaned_steps = cleaned_steps.strip()
             test_steps = json.loads(cleaned_steps)
+            # DEBUG: Log generated test steps
+            print(f"[DEBUG] Test steps for story '{title}': {json.dumps(test_steps, indent=2)}")
         except Exception as e:
-            print(f"Error generating test steps for story '{title}': {e}")
+            print(f"[ERROR] Error generating test steps for story '{title}': {e}")
             test_steps = []
         # 2. Generate Selenium code
         code_template = '''
@@ -111,8 +118,12 @@ def generate_selenium_scripts(user_stories, model_id):
                         break
                     code_lines.append(line)
             final_code = '\n'.join(code_lines).strip()
+            # DEBUG: Log generated Selenium code
+            print(f"[DEBUG] Selenium code for story '{title}':\n{final_code}\n{'-'*40}")
         except Exception as e:
-            print(f"Error generating selenium code for story '{title}': {e}")
+            print(f"[ERROR] Error generating selenium code for story '{title}': {e}")
             final_code = ""
         scripts.append({"title": title, "script": final_code})
+    # DEBUG: Log all generated scripts
+    print(f"[DEBUG] All generated scripts: {json.dumps(scripts, indent=2)}")
     return scripts 

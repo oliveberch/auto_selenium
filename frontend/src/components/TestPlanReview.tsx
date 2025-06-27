@@ -16,9 +16,13 @@ const TestPlanReview: React.FC<TestPlanReviewProps> = ({ testPlan, onBack }) => 
   const handleDownload = async () => {
     setDownloading(true);
     try {
+      // User stories payload
+      const userStories = testPlan.backlog.flatMap((epic: any) => epic.stories);
+      // DEBUG: Log the payload being sent
+      console.log('[DEBUG] User stories payload for /scripts/generate/:', userStories);
       // Call backend to generate scripts and get zip
       const res = await api.post('/scripts/generate/', {
-        user_stories: testPlan.backlog.flatMap((epic: any) => epic.stories),
+        user_stories: userStories,
       }, { responseType: 'blob' });
       // Download the zip file
       const url = window.URL.createObjectURL(new Blob([res.data]));
